@@ -18,9 +18,9 @@ public class daysofibonacci {
 		if(n<0) {
 			return n;
 		}else if((n==0)||(n==1)) {
-			return n;
+			fn=n;
 		}else {
-			while(fn<n) {
+			for(int i=2; i<n; i++) {
 				f0 = f1;
 				f1 = fn;
 				fn = f0 + f1;
@@ -34,12 +34,13 @@ public class daysofibonacci {
             System.out.println("\t___Tổng dãy số Fibonacci ___");
             System.out.print("Xin mời nhập n: ");
             int n = scanner.nextInt();
-            System.out.println("10 số đầu tiên trong dãy Fibonacci:");
-            for(int i=0; i<n; i++) {
-              
-		System.out.print((fibonacci(i))+"\t");
-                
-		}
-	}
-
+            System.out.println("In ra "+n+" số đầu tiên trong dãy Fibonacci:");
+            int tong=0;
+		for(int i=0; i<n; i++) {
+			System.out.print((fibonacci(i))+"\t");
+                        tong+=fibonacci(i);
+                                }
+                System.out.println("\nTổng dãy số Fibonacii = "+tong);
+        
+        }
 }
